@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container2 {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 400px;
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+    input[type="text"], input[type="password"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    input[type="submit"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .register-link {
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .register-link:hover {
+        text-decoration: underline;
+    }
+    .social-icons {
+        margin-top: 30px;
+    }
+    .social-icons a {
+        display: inline-block;
+        color: #333;
+        margin: 0 10px;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+        color: #007bff;
+    }
+</style>
+</head>
+<body>
+
+<div class="container2">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <a href="register.html" class="register-link">Register</a>
+
+    
+
+
+
+</body>
+</html>

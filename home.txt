@@ -1,0 +1,31 @@
+<div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div class="container">
+    
+    <div class="card">
+        <h1 style="font-size: 30px;">Comprehensive Sensor Integration Service:</h1>
+        
+    
+        This service integrates multiple types of sensors, including thermal sensors, visual cameras, and air quality detectors, into a unified fire detection system. By leveraging the strengths of each sensor type, such as thermal detection for early fire detection, visual cameras for confirmation and localization, and air quality detectors for detecting smoke and harmful gases, the system enhances detection accuracy and reliability. Additionally, the service includes intelligent data fusion techniques to combine information from different sensors, providing a more comprehensive understanding of the fire situation.
+      
+    </div>
+    <div class="card">
+    
+        <h1 style="font-size: 30px;"> Learning and Testing Service:</h1>
+        
+    
+        Utilizing machine learning algorithms, this service continuously learns from historical data collected from various fire incidents. The AI model is trained and updated regularly to adapt to different fire types, environmental conditions, and scenarios. By testing the model with diverse datasets and simulated scenarios, the service aims to improve the accuracy and robustness of the fire detection system over time. Regular updates and refinements ensure that the system remains effective in detecting emerging fire threats and evolving environmental conditions.
+       
+    </div>
+    <div class="card">
+        <h1 style="font-size: 30px;">Real-Time Analysis and Emergency Response Integration Service:</h1>
+   
+
+    This service enables real-time analysis of video feeds from AI-powered cameras for early detection of fires. Detected fire incidents are immediately flagged, and relevant information, including location, severity, and environmental conditions, is transmitted to a centralized dashboard accessible to authorized personnel, including building managers and fire department officials. Additionally, the service facilitates seamless communication and collaboration between the camera operators and the fire department through a dedicated software interface. This allows for quick dissemination of critical information and coordination of response efforts, minimizing response times and enhancing overall emergency response effectiveness.
+    
+       
+      
+    </div>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire detection system</title>
+<style>
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+.navbar {
+          
+            overflow: hidden;
+            background-color: white;
+            margin-right: 275px;
+            
+           
+}
+
+.navbar a {
+            float: right;
+            
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 26px 40px;
+            text-decoration: none;
+            
+        }
+
+.navbar a:hover {
+            
+            color: blue;
+        }
+
+  .slideshow-container {
+  max-width: 1680px;
+ 
+  position: relative;
+  margin: auto;
+}
+
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.left-text {
+  position: absolute;
+  top: 70%;
+  left: 15%; /* Adjust as needed */
+  transform: translateY(-50%);
+  color: white;
+  font-size: 42px;
+  z-index: 6;
+}
+
+
+.open-button  {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 24px 24px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    float: right;
+  }
+.open-button:hover{
+    opacity: 1;
+    color: blue;
+}
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+.ABOUT p{
+    font-size: 32px;
+}
+
+    
+.ABOUT {
+    margin-left: 180px; /* Reduced left margin */
+    margin-right: 180px; /* Reduced right margin */
+}
+
+
+#services{
+    margin-bottom: 40px;
+    margin-left: 240px;
+    margin-right: 240px;
+}
+
+#services p{
+    font-size: 16px;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.popup {
+
+  position: absolute;
+  width: 300px;
+  height: 20vh;
+  bottom: 0;
+  right: 0;
+  
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.popup button {
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+}
+
+.popup a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.popup a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+.card {
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom:50px ;
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    overflow: hidden;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    font-size: 34px;
+    background-image: url("image copy 7.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+  }
+  .card:hover {
+  transform: scale(1.1); 
+}
+.card22 {
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom:50px ;
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    overflow: hidden;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    font-size: 34px;
+    background-image: url("image1_0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+  }
+.card22:hover {
+  transform: scale(1.1); 
+}
+.card33 {
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom:50px ;
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    overflow: hidden;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    font-size: 34px;
+    background-image: url("image copy 6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+  }
+.card33:hover {
+  transform: scale(1.1); 
+}
+.hh{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.pp{
+    margin-top: 60px;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+    
+}
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: #f0f0f0;
+  }
+  
+  .card2 {
+    flex: 1;
+    max-width: 200px;
+    padding: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+   
+  }
+
+  .card2:nth-child(4n) {
+    margin-right: 0;
+  }
+  
+  .card2::after {
+    content: "";
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  
+  .card-content {
+    position: relative;
+    z-index: 2;
+  }
+  .container-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .row-6 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .card-6 {
+    flex: 1;
+    font-size: 25px;
+    max-width: calc(33.33% - 10px);
+    margin-left: 45px;
+    padding: 40px;
+    height: 420px;
+    background-color: #fff; /* Background color */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    color: #333; /* Text color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  .card-6:nth-child(3n) {
+    margin-right: 0;
+  }
+  
+  .card-content-6 {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .containerz {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+ 
+  }
+  
+ 
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .form-group input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.footer {
+    margin: 0;
+    background-color: #333;
+    
+    padding: 50px;
+    text-align: center;
+    position: relative;
+   font-size: 25px;
+    width:94%;
+    
+    
+  }
+  .footer p{
+    color: white;
+    font-size: 36px;
+  }
+ 
+
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+.pp2{
+  margin-top: 115px;
+  margin-left: 15%;
+    margin-right: 15%;
+    
+}
+
+</style>
+</head>
+<d>
+
+  
+  <div class="navbar">
+    
+
+    
+  <a href="bookademo.html">Demo</a>
+    
+    <a href="ABOUTUS.html">About us</a>
+   
+</div>
+  
+  
+  
+  
+  
+  <div class="slideshow-container">
+  
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="image0_0 (1).jpg" style="width:100%;height: 600px;z-index: -4;">
+      <div class="left-text">
+        <h2>Advance Fire detection System</h2>
+      
+      </div>
+      
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="image0_0.jpg" style="width:100%;height: 600px;z-index: -4;">
+      <div class="left-text">
+        <h2>More reliable and accurate</h2>
+       
+      </div>
+     
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="WhatsApp Image 2024-04-19 at 17.09.08_d0bf154a.jpg" style="width:100%;height: 600px;z-index: -4;">
+      <div class="left-text">
+        <h2>Better Scalability</h2>
+        
+      </div>
+     
+    </div>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+
+
+
+<div class="ABOUT">
+
+
+ <h1>AIM</h1>
+ <p style="text-align: justify;">Our product Aims to make an innovative and efficient software to detect fires using cameras with the help of A.I to save loss of property and lives by quickly detecting the fire, it works to trigger a loud alarm to notify the people around and contacting the closest fire department simultaneously. Our plan is to use to use various techniques such as thermal analysis, image recognition, thermal sensors, air quality measurement tools and A.I methods such as classification, neural networks etc.Through prototyping, trial runs and welcoming feedback and different viewpoints we aim to enhance detection accuracy while making sure cameras could reliably spot fires without any false alarms.We would be working to utilize fast paced innovation in  camera technology to accurately detect the fire belts  faster than existing methods available in India.</p>
+    
+</div>
+
+
+<div id="services">
+  <h1>Services</h1>
+  <div class="container">
+      <div class="card">
+          <h3 class="hh">Comprehensive Sensor Integration Service:</h3>
+          <p class="pp">This service integrates multiple types of sensors, including thermal sensors, visual cameras, and air quality detectors, into a unified fire detection system.</p>
+      </div>
+      <div class="card22">
+          <h3 class="hh">Learning and Testing Service:</h3>
+          <p class="pp2">Utilizing machine learning algorithms, this service continuously learns from historical data collected from various fire incidents.</p>
+      </div>
+      <div class="card33">
+          <h3 class="hh">Real-Time Analysis:</h3>
+          <p class="pp2">This service enables real-time analysis of video feeds from AI-powered cameras for early detection of fires.</p>
+      </div>
+  </div>
+</div>
+
+</div>
+<h1>Applications</h1>
+<div class="container2">
+  
+    <div class="card2" style="background-image: url('Warehouse_storage_res_800x450.webp');">
+
+        <div class="card-content">
+      <h2>Warehouse</h2>
+        </div>
+    </div>
+
+        <div class="card2" style="background-image: url('Industry-manufacturing_application_res_800x450.webp');">
+      <div class="card-content">
+        <h2>Manufacturing</h2>
+        
+      </div>
+    </div>
+    <div class="card2" style="background-image: url('Charging_Station_res_800x450.webp');">
+      <div class="card-content">
+        <h2>Parking</h2>
+        
+      </div>
+    </div>
+    <div class="card2" style="background-image: url('Hangar_res_800x450.webp');">
+      <div class="card-content">
+        <h2>Transportation in airways</h2>
+        
+      </div>
+    </div>
+</div>
+
+    <h1>BENEFITS</h1>
+<div class="container-6">
+    <div class="row-6">
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Early Detection</h3>
+          <p>AI algorithms can analyze various data sources like video feeds, thermal imaging, and smoke detectors in real-time. This allows for the early detection of fires, often before they escalate into major incidents, giving occupants more time to evacuate safely.</p>
+        </div>
+      </div>
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Reduced False Alarms</h3>
+          <p>AI can distinguish between real fire threats and false alarms caused by activities like cooking smoke or steam. This reduces the likelihood of unnecessary evacuations, minimizing disruption and increasing the credibility of the system</p>
+        </div>
+      </div>
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Improved Accuracy</h3>
+          <p>AI systems can continuously learn and adapt based on feedback, improving their accuracy over time. This adaptive learning enables the system to better recognize patterns associated with fire, even in complex environments with varying conditions.</p>
+          </card>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container-6">
+  
+
+    <div class="row-6">
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Remote Monitoring:</h3>
+          <p>
+            With AI-powered fire detection, monitoring can be done remotely through connected devices. This enables firefighters and building managers to receive alerts and monitor the situation from anywhere, facilitating faster response times and potentially preventing disasters.
+          </p>
+        </div>
+      </div>
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Integration with Other Systems</h3>
+          <p> AI-based fire detection systems can easily integrate with other building management systems such as HVAC, access control, and sprinkler systems. This integration allows for coordinated responses in emergency situations, enhancing overall safety and security.
+          </p>
+        </div>
+      </div>
+      <div class="card-6">
+        <div class="card-content-6">
+          <h3>Cost-effectiveness</h3>
+          <p> While initial setup costs may be higher, AI-based fire detection systems can be more cost-effective in the long run due to reduced maintenance needs and fewer false alarms. Additionally, the potential for early detection can minimize property damage and loss, ultimately saving money in the event of a fire.
+
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+ 
+  
+
+<div class="footer">
+   <p>Fire detection by cameras</p>
+</div>
+
+
+<script>
+function togglePopup() {
+  var overlay = document.getElementById('overlay');
+  overlay.style.display = overlay.style.display === 'block' ? 'none' : 'block';
+}
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); 
+}
+
+</script>
+
+
+</body>
+</html>
